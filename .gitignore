@@ -1,0 +1,6 @@
+# IDEs
+.vscode/
+.idea/
+
+# Models
+*.h5
