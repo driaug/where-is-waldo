@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskApp</title>
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+    <h2>Welcome to FlaskApp!</h2>
+
+    <img src={{url_for('static', filename=image )}} />
+</body>
+<script>
+    function getCursorPosition(img, event) {
+        const rect = img.getBoundingClientRect()
+        const x = event.clientX - rect.left
+        const y = event.clientY - rect.top
+        return { x: x, y: y }
+    }
+
+    const img = document.querySelector('img')
+    img.addEventListener('mousedown', function (e) {
+        const pos = getCursorPosition(img, e);
+        console.log(pos);
+    })
+</script>
+
+</html>
