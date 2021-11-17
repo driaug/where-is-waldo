@@ -10,6 +10,8 @@ app = Flask(__name__,  static_url_path='/static')
 def click():
     data = request.get_json()
 
+    bounds = get_waldo_bounds()
+
     return jsonify(data)
 
 
