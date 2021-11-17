@@ -7,9 +7,6 @@
 </head>
 
 <body>
-    <h1>Hello World!</h1>
-    <h2>Welcome to FlaskApp!</h2>
-
     <img src={{url_for('static', filename=image )}} />
 </body>
 <script>
@@ -23,7 +20,22 @@
     const img = document.querySelector('img')
     img.addEventListener('mousedown', function (e) {
         const pos = getCursorPosition(img, e);
-        console.log(pos);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", 'http://127.0.0.1:5000/click', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify({
+            img: '{{image}}',
+            x: pos.x,
+            y: pos.y,
+        }));
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+                const response = JSON.parse(xhr.responseText)
+                console.log(response)
+            }
+        }
     })
 </script>
 
