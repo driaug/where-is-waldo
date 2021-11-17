@@ -26,8 +26,7 @@ model = models.load_model(model_path, backbone_name='resnet50')
 if len(sys_args) > 2:
     image_files = sys.argv[2:]
 else:
-    image_files = ['./images/'+random.choice(os.listdir(
-        './images')), './test_images/'+random.choice(os.listdir('./test_images'))]
+    image_files = ['./test_images/'+random.choice(os.listdir('./test_images'))]
 
 
 for image in image_files:
