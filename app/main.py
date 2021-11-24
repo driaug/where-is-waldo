@@ -18,8 +18,5 @@ def click():
 @app.route("/", methods=['GET'])
 def index():
     random_image = random.choice(os.listdir('./static'))
-
     return render_template('index.html', image=random_image)
-
-
 app.run()
