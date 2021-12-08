@@ -11,3 +11,6 @@ models/
 export.pkl
 
 .ipynb_checkpoints/
+
+static/
+uploads/
