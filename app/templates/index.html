@@ -3,40 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>FlaskApp</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit machine!</title>
 </head>
 
 <body>
-    <img src={{url_for('static', filename=image )}} />
+    <h1>Dik stuk fruit G</h1>
+    <form method="post" action="/" enctype=multipart/form-data>
+        <div>
+            <label for="image">Your image</label>
+            <input name="image" type="file" accept=".jpg,.png" />
+        </div>
+        <div>
+            <input type="submit" value="submit">
+        </div>
+    </form>
 </body>
-<script>
-    function getCursorPosition(img, event) {
-        const rect = img.getBoundingClientRect()
-        const x = event.clientX - rect.left
-        const y = event.clientY - rect.top
-        return { x: x, y: y }
-    }
-
-    const img = document.querySelector('img')
-    img.addEventListener('mousedown', function (e) {
-        const pos = getCursorPosition(img, e);
-
-        const xhr = new XMLHttpRequest();
-        xhr.open("POST", 'http://127.0.0.1:5000/click', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify({
-            img: '{{image}}',
-            x: pos.x,
-            y: pos.y,
-        }));
-
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == XMLHttpRequest.DONE) {
-                const response = JSON.parse(xhr.responseText)
-                console.log(response)
-            }
-        }
-    })
-</script>
 
 </html>
