@@ -6,4 +6,8 @@ from fastbook import load_learner
 def predict(image):
     model = load_learner('../notebook/export.pkl')
     prediction = model.predict(image)
-    return prediction[0]
+    print(str(prediction[2][1] * 100) + '%')
+    if prediction[2][1] > 0.9952:
+        return prediction[0]
+    else:
+        print("DARN")
