@@ -1,3 +1,4 @@
+# THIS FILE IS NOT USED IN THE SOLUTION
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten, BatchNormalization, Activation
 from keras.layers.convolutional import Conv2D, MaxPooling2D
