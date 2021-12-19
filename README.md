@@ -2,7 +2,7 @@
 
 ## Dependencies
 
-Run the command 'pip install -r requirements.txt' to install all of the necessary dependencies for this repository.
+Run the command `pip install -r requirements.txt` to install all of the necessary dependencies for this repository.
 
 ## Model
 
