@@ -1,8 +1,12 @@
 # Where is Waldo
 
+## Dependencies
+
+Run the command 'pip install -r requirements.txt' to install all of the necessary dependencies for this repository.
+
 ## Model
 
-The pre-trained model can be found [here](https://drive.google.com/file/d/1s-3z-ZzqaXSB50hv4DC_D9ZP2CKfWSkD/view?usp=sharing). Place it inside of the `model/` folder.
+Placed inside of the `model/` folder.
 
 ## Running
 
